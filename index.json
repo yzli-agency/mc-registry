@@ -1,0 +1,32 @@
+{
+  "$schema": "https://mission-control.yzli.io/schemas/registry-v1.json",
+  "version": "1.0.0",
+  "updated_at": "2026-03-16",
+  "maintainers": ["julian-yzli"],
+  "modules": [
+    {
+      "id": "yzli/clients",
+      "name": "Clients & Projects",
+      "description": "Gestion clients et projets — CRUD, dashboard, fiches client",
+      "repository": "https://github.com/yzli-agency/mc-module-clients",
+      "latest_version": "0.1.0",
+      "mc_version": ">=1.0.0",
+      "dependencies": [],
+      "visibility": "team",
+      "tags": ["core", "clients", "projects"],
+      "author": "yzli-agency"
+    },
+    {
+      "id": "yzli/kanban",
+      "name": "Kanban Board",
+      "description": "Tableau kanban avec auto-trigger agents, suggestions IA, live stream",
+      "repository": "https://github.com/yzli-agency/mc-module-kanban",
+      "latest_version": "0.1.0",
+      "mc_version": ">=1.0.0",
+      "dependencies": ["yzli/clients"],
+      "visibility": "team",
+      "tags": ["kanban", "tasks", "agents"],
+      "author": "yzli-agency"
+    }
+  ]
+}
