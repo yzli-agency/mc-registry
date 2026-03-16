@@ -1,12 +1,12 @@
 {
   "$schema": "https://mission-control.yzli.io/schemas/registry-v1.json",
   "version": "1.0.0",
-  "updated_at": "2026-03-16",
+  "updated_at": "2026-03-17",
   "maintainers": ["julian-yzli"],
   "modules": [
     {
       "id": "yzli/clients",
-      "name": "Clients & Projects",
+      "name": "Clients & Projets",
       "description": "Gestion clients et projets — CRUD, dashboard, fiches client",
       "repository": "https://github.com/yzli-agency/mc-module-clients",
       "latest_version": "0.1.0",
@@ -23,9 +23,81 @@
       "repository": "https://github.com/yzli-agency/mc-module-kanban",
       "latest_version": "0.1.0",
       "mc_version": ">=1.0.0",
-      "dependencies": ["yzli/clients"],
+      "dependencies": ["yzli/clients", "yzli/agents"],
       "visibility": "team",
       "tags": ["kanban", "tasks", "agents"],
+      "author": "yzli-agency"
+    },
+    {
+      "id": "yzli/agents",
+      "name": "Agents IA",
+      "description": "Gestion des rôles agents, system prompts, et orchestration",
+      "repository": "https://github.com/yzli-agency/mc-module-agents",
+      "latest_version": "0.1.0",
+      "mc_version": ">=1.0.0",
+      "dependencies": ["yzli/clients"],
+      "visibility": "team",
+      "tags": ["agents", "ai", "orchestration"],
+      "author": "yzli-agency"
+    },
+    {
+      "id": "yzli/pipeline",
+      "name": "Pipeline Documentaire",
+      "description": "Génération IA de documents (brief, spec, PRD...) avec workflow d'approbation",
+      "repository": "https://github.com/yzli-agency/mc-module-pipeline",
+      "latest_version": "0.1.0",
+      "mc_version": ">=1.0.0",
+      "dependencies": ["yzli/clients", "yzli/agents"],
+      "visibility": "team",
+      "tags": ["pipeline", "documents", "ai"],
+      "author": "yzli-agency"
+    },
+    {
+      "id": "yzli/cells",
+      "name": "Cellules d'Agents",
+      "description": "Workers éphémères spawnables/killables, scheduler de cellules",
+      "repository": "https://github.com/yzli-agency/mc-module-cells",
+      "latest_version": "0.1.0",
+      "mc_version": ">=1.0.0",
+      "dependencies": ["yzli/agents"],
+      "visibility": "team",
+      "tags": ["cells", "workers", "scheduler"],
+      "author": "yzli-agency"
+    },
+    {
+      "id": "yzli/calendar",
+      "name": "Agenda & Scheduler",
+      "description": "Agenda visuel des crons, tâches récurrentes et cellules planifiées",
+      "repository": "https://github.com/yzli-agency/mc-module-calendar",
+      "latest_version": "0.1.0",
+      "mc_version": ">=1.0.0",
+      "dependencies": ["yzli/clients"],
+      "visibility": "team",
+      "tags": ["calendar", "scheduler", "cron"],
+      "author": "yzli-agency"
+    },
+    {
+      "id": "yzli/marketplace",
+      "name": "Marketplace",
+      "description": "Browser de modules MC — install, update, désinstall depuis le registry",
+      "repository": "https://github.com/yzli-agency/mc-module-marketplace",
+      "latest_version": "0.1.0",
+      "mc_version": ">=1.0.0",
+      "dependencies": [],
+      "visibility": "team",
+      "tags": ["marketplace", "registry", "modules"],
+      "author": "yzli-agency"
+    },
+    {
+      "id": "yzli/veille",
+      "name": "Veille & Intelligence",
+      "description": "Veille technologique et économique — topics, articles, digests",
+      "repository": "https://github.com/yzli-agency/mc-module-veille",
+      "latest_version": "0.1.0",
+      "mc_version": ">=1.0.0",
+      "dependencies": ["yzli/agents"],
+      "visibility": "team",
+      "tags": ["veille", "intelligence", "monitoring"],
       "author": "yzli-agency"
     }
   ]
